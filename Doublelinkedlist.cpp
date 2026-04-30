@@ -20,4 +20,32 @@ public:
 
         //Step 2 Assign value to the data fields
         newNode->noMhs = nim;
-    }
+
+        //Step 3 Insert at beginning if list is empty or nim is smallest
+        if (START == NULL || nim <= START->noMhs)
+        {
+            if (START != NULL && nim == START->noMhs)
+            {
+                cout << "\nDuplicate number not allowed" << endl;
+                return;
+            }
+            //Step 4: newNode.next = start
+            newNode->next = START;
+
+            //Step 5: START.prev = newNode (if START exists)
+            if (START != NULL)
+                START->prev = newNode;
+
+            //Step 6: newNode.prev = NULL
+            newNode->prev = NULL;
+
+            //Step 7: START = newNode
+            START = newNode;
+            return;
+        }
+
+        Node *current = START;
+        while (current->next != NULL && current->next->noMhs < nim)
+        {
+            current = current->next;
+        }
