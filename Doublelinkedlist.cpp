@@ -14,8 +14,7 @@ private:
     Node *START;
 
 public:
-    DoubleLinkedList()
-    {
+    DoubleLinkedList(){
         START = NULL;
     }
 
