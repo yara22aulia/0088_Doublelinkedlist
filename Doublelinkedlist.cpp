@@ -48,8 +48,7 @@ public:
             current = current->next;
         }
 
-        if (current->next != NULL && nim == current->next->noMhs)
-        {
+        if (current->next != NULL && nim == current->next->noMhs){
             cout << "\nDuplicate roll numbers not allowed" << endl;
             return;
         }
@@ -63,8 +62,7 @@ public:
         current->next = newNode;
     }
 
-    void hapus()
-    {
+    void hapus(){
         if (START == NULL)
         {
             cout << "\nList is empty" << endl;
